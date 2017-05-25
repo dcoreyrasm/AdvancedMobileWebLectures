@@ -25,7 +25,7 @@
 
 					$conf_num = (isset($_POST['conf_num'])    ? $_POST['conf_num']   : '');
 
-					$sql= "SELECT customers.fname, customers.lname, customers.state, orders.conf_num, orders.salesrep
+					$sql= "SELECT customers.customerid, customers.fname, customers.lname, customers.state, orders.conf_num, orders.salesrep
 						FROM customers
 						JOIN orders on customers.customerid = orders.customerid
 						WHERE conf_num LIKE '$conf_num' LIMIT 100";
