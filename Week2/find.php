@@ -45,7 +45,8 @@
 					mysqli_close($conn);
 
 					?>
-
+				</div>
+			</div>
 				<div data-role="footer" data-theme="b">
 	  <h4>Darice Corey-Gilbert &copy; 2017</h4>
 	</div>
