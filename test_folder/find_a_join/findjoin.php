@@ -16,38 +16,37 @@
 	Find your contact
 		</h1>	</div>
 				<div data-role="content">
+
+
 					<?php
+					include 'config.php';
+					include 'opendb.php';
 
-							include 'config.php';
-							include 'opendb.php';
+					$companyid = (isset($_POST['companyid'])    ? $_POST['companyid']   : '');
 
+					$sql= "SELECT company.companyid, company.address, company.city, company.zip, ordernumber.ordernumberid, ordernumber.dateofdelivery
+							FROM company
+							JOIN ordernumber on company.companyid = ordernumber.companyid2
+							WHERE companyid LIKE '$companyid' LIMIT 1";
+					$result = mysqli_query($conn, $sql);
 
-							$companyid = (isset($_POST['companyid'])    ? $_POST['companyid']   : '');
+					if (mysqli_num_rows($result) > 0) {
+					    // output data of each row
+					    while($row = mysqli_fetch_assoc($result)) {
+									echo "CompanyID: " . $row["companyid"]. "<br>";
+					        echo "Address: " . $row["address"]. "<br>";
+					        echo "City: " . $row["city"]. "<br>";
+									echo "Zip: " . $row["zip"]. "<br>";
+									echo "Order #: " . $row["ordernumberid"]. "<br>";
+									echo "Date of Delivery: " . $row["dateofdelivery"]. "<br>";
+					    }
+					} else {
+					    echo "0 results";
+					}
 
-							$sql= "SELECT company.companyid, company.address, company.city, company.zip, ordernumber.ordernumberid, ordernumber.dateofdelivery
-									FROM company
-									JOIN ordernumber on company.companyid = ordernumber.companyid2
-									WHERE companyid LIKE '$companyid' LIMIT 1";
+					mysqli_close($conn);
 
-							$result = mysqli_query($conn, $sql);
-
-							if (mysqli_num_rows ($result) > 0) {
-								//output data of each row
-								while ($row = mysqli_fetch_assoc ($result)) {
-									echo "Company: " . $row["companyid"]. "<br>";
-									echo "address: " . $row["address"]. "<br>";
-									echo "city:    " . $row["city"]. "<br>";
-									echo "zip:     "  .$row["zip"]. "<br>";
-									echo "Ordernumber: " $row["ordernumberid"]. "<br>";
-									echo "dateofdelivery: " $row["dateofdelivery"]. "<br>";
-									}
-								} else {
-										echo "0 results";
-								}
-
-								mysqli_close($conn);
-
-						?>
+					?>
 
 				<div data-role="footer" data-theme="b">
 	  <h4>Darice Corey-Gilbert &copy; 2017</h4>
