@@ -15,29 +15,26 @@
 	});
 
 	function show() {
-		window.navigator.vibrate([300,100,300])
-		window.setTimeout(function () {
-			var instance = new Notification(
-				"Rasmussen College Test App Notification", {
-					body: "This is a test notification to see if you're paying attention!",
-					icon: "data:image/jpeg;base64,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"
+		var instance = new Notification(
+			"This is a test", {
+				body: "just checking!",
+				icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGEAAABgCAMAAAA6hOw0AAAAYFBMVEX///9isB5TqgBgrxharQBerhL8/ftbrQj4+/bh7tputTnp8+SizYnS5sj0+fHb69ODvl29262JwWe52adLpwBosiup0ZHB3LGu05p2uEpxtkB9u1bv9uuayYCRxXPG4LgwmZRAAAACvElEQVRoge2Z25aiMBBFyc2gArYKKir4/3/ZDC0IqWIkcjIPs/q8usheda/EKPrVf6s4TQ6HKg12fpYIaY2x8hDm/NVJWiVayUsIQCq06GRK/PmrWirxItzggHXxMqCRhnvpmKshQBUrMKCWYiS5xZ6fXbUDANfDzprR+QoNeEgVFnB0QgAHJC7ArrEAN4nggIMODCgJAFsH8dUGBpQuQGNdFG8IAGtBtjEOQGItYADYQosLB4BudsQCIc9YwJUAsCNt5WaRkBUUQApNaOx2tLq5AFNih/LN6UVCiQwK+HIB6KlfU8ADCqgkAZyggBMBWGwaXQgAvNudCQAc5TSnAGiUd9QCDW0WW6tcgCqQgIwCsEGIyUBoAHsgICLdrqmELyTAXe1aE+LZn99PG62Lw2U3+Ym7/baA+XM5lboJojJaijplK9Td39tEredboPskUUYWCc2PlAEoMd9HycjFyuY3x/w1LWW/3eXmpqGR1/PAWXdBC0HY+T5qFnR6gJLFsf+dLC6tpfN9xLX8P0doffyxgykE74bn3pOe0mLfMCqmEITxrTU6GTtfPfbsT/ndk8AW1I+vOBd99CjCxmJKauMP8EN8uMbPR5hPl4upWFATvMPciS5zrHTyKaBZSNnEcaSUTzW74voDMWHR5MwU0+McEz7K1JfWb6O9+ML5eINQ14UAdxxRE3aLCVH5t2h791ROGTfRehMgDxfc2O9MAF1G2JnTKketqZsJP6FMaKpiwgjg89GFReBMiCYaFKIWem2ZfILUwkuMn6AmREw+ATrSWOTeCX68aFSPB97SucAoHkdCH99/4qvRqPC5j8zXsI/bBQvGtIYjNcc+s3Wq+mBDG8ZAcU9AV1uv7pILr7aXnpUdIlWfek5UEybOrdqbsPG52fqqbeN5qDi3SqTRAf6OH+pSVgGj8Kt/pG8JSRqcgOaT+wAAAABJRU5ErkJggg=="
 
-				}
-			);
+			}
+		);
 
-			instance.onclick = function () {
-				// Something to do
-			};
-			instance.onerror = function () {
-				// Something to do
-			};
-			instance.onshow = function () {
-				// Something to do
-			};
-			instance.onclose = function () {
-				// Something to do
-			};
-		}, 1000);
+		instance.onclick = function () {
+			// Something to do
+		};
+		instance.onerror = function () {
+			// Something to do
+		};
+		instance.onshow = function () {
+			// Something to do
+		};
+		instance.onclose = function () {
+			// Something to do
+		};
 	}
 </script>
 
