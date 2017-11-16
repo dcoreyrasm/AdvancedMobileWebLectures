@@ -27,7 +27,7 @@
 					$sql= "SELECT customers.customerid, customers.fname, customers.lname, customers.state, orders.conf_num, orders.salesrep
 						FROM customers
 						JOIN orders on customers.customerid = orders.customerid
-						WHERE conf_num LIKE '$conf_num' LIMIT 100";
+						WHERE conf_num LIKE '%$conf_num%' LIMIT 100";
 					$result = mysqli_query($conn, $sql);
 
 					if (mysqli_num_rows($result) > 0) {
