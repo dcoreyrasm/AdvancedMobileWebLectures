@@ -8,11 +8,30 @@
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script src="javascript/storage.js"></script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<meta name="google-signin-client_id" content="227158997127-q93t34ccevmp1l7hqn10njkamjhrlh38.apps.googleusercontent.com">
+<!-- <script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="227158997127-q93t34ccevmp1l7hqn10njkamjhrlh38.apps.googleusercontent.com"> -->
 
 </head>
 	<body>
+
+		<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '553921614954393',
+      xfbml      : true,
+      version    : 'v2.11'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 		<div id="page" data-role="page" data-theme="b" >
 	<div data-role="header" data-theme="b">
 <h1>
@@ -27,7 +46,15 @@ Jump Page		</h1>	</div>
 <a href="Week6/index.html">Week 6</a><br />
 
 	</div>
-	<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+	<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+
+	<!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
 
 				<div data-role="footer" data-theme="b">
 	  <h4>Darice Corey-Gilbert &copy; 2017</h4>
