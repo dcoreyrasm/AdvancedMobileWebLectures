@@ -112,9 +112,13 @@
 		    });
 
         }
-				function logoutFacebook() {
+		  }
+		</script>
+
+		<script type="text/javascript">
+        function logoutFacebook() {
           FB.init({
-            appId:'<?php print YOUR_APP_ID; ?>', cookie:true,
+            appId:'553921614954393', cookie:true, 
             status:true, xfbml:true
           });
           FB.logout(function() {
@@ -123,8 +127,8 @@
             // Or uncomment the following line to redirect
             //window.location = "https://ykyuen.wordpress.com";
           });
-		  }
-		</script>
+        }
+      </script>
 
 		<div id="page" data-role="page" data-theme="b" >
 	<div data-role="header" data-theme="b">
