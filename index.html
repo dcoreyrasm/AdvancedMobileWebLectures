@@ -97,6 +97,11 @@
 		      document.getElementById('status').innerHTML =
 		        'Thanks for logging in, ' + response.name + '!';
 		    });
+				function logout() {
+            FB.logout(function(response) {
+              // user is now logged out
+            });
+
 		  }
 		</script>
 
@@ -126,6 +131,8 @@ Jump Page		</h1>	</div>
 
 	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 	</fb:login-button>
+
+	<button onclick="javascript:logout();">Logout from Facebook</button>
 
 				<div data-role="footer" data-theme="b">
 	  <h4>Darice Corey-Gilbert &copy; 2017</h4>
