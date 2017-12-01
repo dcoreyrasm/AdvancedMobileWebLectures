@@ -87,6 +87,10 @@
 						//user is not authorized
 					}
 				});
+
+				FB.logout(function(response) {
+  				// user is now logged out
+				});
 		  };
 
 		  // Load the SDK asynchronously
@@ -138,6 +142,9 @@ Jump Page		</h1>	</div>
 
 	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 	</fb:login-button>
+
+	<fb:logout-button scope="public_profile,email" onlogout="checkLoginState();">
+</fb:logout-button>
 
 				<div data-role="footer" data-theme="b">
 	  <h4>Darice Corey-Gilbert &copy; 2017</h4>
