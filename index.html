@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+
 
 <!-- <script src="https://apis.google.com/js/platform.js" async defer></script>
 <meta name="google-signin-client_id" content="227158997127-q93t34ccevmp1l7hqn10njkamjhrlh38.apps.googleusercontent.com"> -->
@@ -109,19 +111,18 @@
 		        'Thanks for logging in, ' + response.name + '!';
 		    });
 
+        }
 				function logoutFacebook() {
           FB.init({
-            appId:'553921614954393', cookie:true,
+            appId:'<?php print YOUR_APP_ID; ?>', cookie:true,
             status:true, xfbml:true
           });
           FB.logout(function() {
             // Reload the same page after logout
             window.location.reload();
             // Or uncomment the following line to redirect
-            //window.location = "http://dcrasmlecture1.azurewebsites.net";
+            //window.location = "https://ykyuen.wordpress.com";
           });
-        }
-
 		  }
 		</script>
 
@@ -153,6 +154,7 @@ Jump Page		</h1>	</div>
 	</fb:login-button>
 
 	<p><a href="javascript:logoutFacebook()">Logout</a></p>
+
 				<div data-role="footer" data-theme="b">
 	  <h4>Darice Corey-Gilbert &copy; 2017</h4>
 	</div>
