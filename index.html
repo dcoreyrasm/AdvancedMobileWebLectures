@@ -88,9 +88,6 @@
 					}
 				});
 
-				FB.logout(function(response) {
-  				// user is now logged out
-				});
 		  };
 
 		  // Load the SDK asynchronously
@@ -112,6 +109,18 @@
 		        'Thanks for logging in, ' + response.name + '!';
 		    });
 
+				function logoutFacebook() {
+          FB.init({
+            appId:'553921614954393', cookie:true,
+            status:true, xfbml:true
+          });
+          FB.logout(function() {
+            // Reload the same page after logout
+            window.location.reload();
+            // Or uncomment the following line to redirect
+            //window.location = "http://dcrasmlecture1.azurewebsites.net";
+          });
+        }
 
 		  }
 		</script>
@@ -143,9 +152,7 @@ Jump Page		</h1>	</div>
 	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 	</fb:login-button>
 
-	<fb:logout-button scope="public_profile,email" onlogout="checkLoginState();">
-</fb:logout-button>
-
+	<p><a href="javascript:logoutFacebook()">Logout</a></p>
 				<div data-role="footer" data-theme="b">
 	  <h4>Darice Corey-Gilbert &copy; 2017</h4>
 	</div>
