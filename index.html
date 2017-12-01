@@ -54,6 +54,10 @@
 		    });
 		  }
 
+			function Logout() {
+			  FB.logout(function () { document.location.reload(); });
+			}
+
 		  window.fbAsyncInit = function() {
 		  FB.init({
 		    appId      : '553921614954393',
@@ -112,23 +116,9 @@
 		    });
 
         }
+
 		  }
 		</script>
-
-		<script type="text/javascript">
-        function logoutFacebook() {
-          FB.init({
-            appId:'553921614954393', cookie:true, 
-            status:true, xfbml:true
-          });
-          FB.logout(function() {
-            // Reload the same page after logout
-            window.location.reload();
-            // Or uncomment the following line to redirect
-            //window.location = "https://ykyuen.wordpress.com";
-          });
-        }
-      </script>
 
 		<div id="page" data-role="page" data-theme="b" >
 	<div data-role="header" data-theme="b">
@@ -157,7 +147,7 @@ Jump Page		</h1>	</div>
 	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 	</fb:login-button>
 
-	<p><a href="javascript:logoutFacebook()">Logout</a></p>
+	<input type="button" value="Logout" onclick="Logout();" />
 
 				<div data-role="footer" data-theme="b">
 	  <h4>Darice Corey-Gilbert &copy; 2017</h4>
