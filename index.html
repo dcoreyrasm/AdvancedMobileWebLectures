@@ -7,21 +7,25 @@
 <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-<script src="javascript/storage.js"></script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<meta name="google-signin-client_id" content="227158997127-q93t34ccevmp1l7hqn10njkamjhrlh38.apps.googleusercontent.com">
+
+<!-- <script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="227158997127-q93t34ccevmp1l7hqn10njkamjhrlh38.apps.googleusercontent.com"> -->
 
 </head>
 	<body>
 
 		<div id="fb-root"></div>
-		<!-- <script>(function(d, s, id) {
+		<script>(function(d, s, id) {
 		  var js, fjs = d.getElementsByTagName(s)[0];
 		  if (d.getElementById(id)) return;
 		  js = d.createElement(s); js.id = id;
 		  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=553921614954393';
 		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script> -->
+		}(document, 'script', 'facebook-jssdk'));
+		FB.logout(function(response) {
+		  // user is now logged out
+		});
+	</script>
 
 
 		<div id="page" data-role="page" data-theme="b" >
@@ -46,9 +50,9 @@ Jump Page		</h1>	</div>
   data-show-faces="true">
 </div>
 
-	<div class="g-signin2" data-onsuccess="onSignIn"></div>
-	<!-- 
-<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
+	<!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+
+<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
 
 
 				<div data-role="footer" data-theme="b">
