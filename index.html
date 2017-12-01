@@ -73,10 +73,20 @@
 		  //
 		  // These three cases are handled in the callback function.
 
-		  FB.getLoginStatus(function(response) {
-		    statusChangeCallback(response);
-		  });
-
+		  // FB.getLoginStatus(function(response) {
+		  //   statusChangeCallback(response);
+		  // });
+      //
+				//check user session and refresh it
+				FB.getLoginStatus(function(response) {
+					if (response.status === 'connected') {
+						//user is authorized
+						document.getElementById('loginBtn').style.display = 'none';
+						getUserData();
+					} else {
+						//user is not authorized
+					}
+				});
 		  };
 
 		  // Load the SDK asynchronously
